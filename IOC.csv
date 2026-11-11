@@ -1,0 +1,16 @@
+IOC_Type,Value,Description,Confidence
+IPv4,10.10.0.78,Attacker primary IP (Guest Wi-Fi) - Used for registration and phishing payload,High
+IPv4,10.255.254.2,Attacker secondary IP - Used for unauthorized ACP access,High
+IPv4,::1,Localhost (Benign) - Appeared in logs during internal Apache dummy connections,Low
+Username,apoole1,Rogue contractor account created by the attacker,High
+User_ID,52,Attacker's user ID in the phpbb_users table,High
+User_ID,51,Compromised/Targeted user ID modified via ACP by the attacker,High
+Extension,rokx/dborldap,Malicious/Exploited LDAP extension enabled to bypass authentication,High
+URL,http://10.10.0.78/update.php,Credential harvesting endpoint hidden inside Post ID 9,High
+File,backup_1682506471_dcsr71p7fyijoyq8.sql.gz,Stolen full database backup downloaded from the /store/ directory,High
+File_Path,/store/,Web-accessible directory containing sensitive database backups,High
+Post_ID,9,Malicious forum post titled "Hello Everyone" containing the phishing HTML form,High
+Password,password1,Plaintext LDAP password stored in phpbb_config table,High
+Config_Key,ldap_password,Configuration key storing the plaintext LDAP credential,High
+User_Agent,Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36,Attacker's secondary device used for Admin access,Medium
+User_Agent,Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:106.0) Gecko/20100101 Firefox/106.0,Attacker's primary device used for registration and posting,Medium
